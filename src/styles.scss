@@ -1,1 +1,14 @@
 /* You can add global styles to this file, and also import other style files */
+.body-mt-72 {
+  margin-top: 72px;
+}
+.body-mt-142 {
+  margin-top: 142px;
+  @media (max-width: 479px) {
+    margin-top: 100px;
+  }
+}
+
+.btn-rounded {
+  border-radius: 25px;
+}
