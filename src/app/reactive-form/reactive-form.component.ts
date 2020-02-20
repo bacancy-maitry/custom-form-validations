@@ -29,6 +29,10 @@ export class ReactiveFormComponent implements OnInit {
 
   submitForm() {
     console.log('this.userForm.value', this.userForm.valid);
+    if (this.userForm.valid) {
+      console.log('this.userForm.value', this.userForm.value);
+      alert(JSON.stringify(this.userForm.value));
+    }
   }
 
 }

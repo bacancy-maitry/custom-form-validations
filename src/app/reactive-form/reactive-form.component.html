@@ -11,16 +11,15 @@
         <div
           class="text-danger"
           *ngIf="
-            userForm.get('userName').errors &&
-            userForm.get('userName').dirty
+            userForm.get('userName').errors && userForm.get('userName').dirty
           "
         >
-          <span *ngIf="userForm.get('userName').errors?.required"
-            >UserName is required</span
-          >
-          <span *ngIf="userForm.get('userName').errors?.cannotContainSpace"
-            >Can not contain any space.</span
-          >
+          <span *ngIf="userForm.get('userName').errors?.required">
+            UserName is required
+          </span>
+          <span *ngIf="userForm.get('userName').errors?.cannotContainSpace">
+            Can not contain any space.
+          </span>
         </div>
       </div>
 
@@ -31,13 +30,11 @@
           placeholder="Enter Address"
         />
         <div
-          class="text-danger"
           *ngIf="
-            userForm.get('address').errors &&
-            userForm.get('address').dirty
+            userForm.get('address').errors && userForm.get('address').dirty
           "
         >
-          <span>Company Address is required</span>
+          <span class="text-danger">Company Address is required</span>
         </div>
       </div>
 
@@ -47,30 +44,27 @@
           formControlName="website"
           placeholder="Enter Website"
         />
+
         <div
-          class="text-danger"
           *ngIf="
-            userForm.get('website').errors &&
-            userForm.get('website').dirty &&
-            userForm.get('website').errors?.validUrl &&
-            !userForm.get('website').errors?.cannotContainSpace
+            userForm.get('website').errors && userForm.get('website').dirty
           "
         >
           <span
+            class="text-danger"
+            *ngIf="
+              userForm.get('website').errors?.validUrl &&
+              !userForm.get('website').errors?.cannotContainSpace
+            "
             >Only urls served over https and only from the .com top-leveldomain
             are accepted.</span
           >
-        </div>
-
-        <div
-          class="text-danger"
-          *ngIf="
-            userForm.get('website').errors &&
-            userForm.get('website').dirty &&
-            userForm.get('website').errors?.cannotContainSpace
-          "
-        >
-          <span>Can not contain any space.</span>
+          <span
+            class="text-danger"
+            *ngIf="userForm.get('website').errors?.cannotContainSpace"
+          >
+            Can not contain any space.
+          </span>
         </div>
       </div>
 
