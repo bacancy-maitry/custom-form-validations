@@ -11,12 +11,9 @@
         <div
           class="text-danger"
           *ngIf="
-            userForm.get('userName').errors && userForm.get('userName').dirty
+            userForm.get('userName').errors && userForm.get('userName').value
           "
         >
-          <span *ngIf="userForm.get('userName').errors?.required">
-            UserName is required
-          </span>
           <span *ngIf="userForm.get('userName').errors?.cannotContainSpace">
             Can not contain any space.
           </span>
@@ -31,7 +28,7 @@
         />
         <div
           *ngIf="
-            userForm.get('address').errors && userForm.get('address').dirty
+            userForm.get('address').errors && (userForm.get('address').dirty || userForm.get('address').touched)
           "
         >
           <span class="text-danger">Company Address is required</span>
@@ -47,7 +44,7 @@
 
         <div
           *ngIf="
-            userForm.get('website').errors && userForm.get('website').dirty
+            userForm.get('website').errors && userForm.get('website').value
           "
         >
           <span

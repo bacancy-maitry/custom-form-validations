@@ -21,9 +21,9 @@ export class ReactiveFormComponent implements OnInit {
 
   createForm() {
     this.userForm = this.fb.group({
-      userName: ['', [Validators.required, NoSpaceValidator]],
+      userName: ['', [NoSpaceValidator]],
       address: ['', Validators.required],
-      website: ['', [Validators.required, ValidateUrl, NoSpaceValidator]],
+      website: ['', [ValidateUrl, NoSpaceValidator]],
     });
   }
 
